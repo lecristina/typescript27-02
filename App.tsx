@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+let somar : (n1 : number, n2 : number) => number
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+function calculo(numero1 : number, numero2 : number) : number {
+  return numero1 + numero2;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// função anonima, quando não tem nome. Usamos para quando precisamos
+// passar uma função como parametro
+(numero1 : number, numero2 : number) : number => {
+  return numero1 + numero2
+}
+
+//e podemos colocar ela dentro de uma variavel
+somar = (numero1 : number, numero2 : number) : number => {
+  return numero1 + numero2
+}
+
+let s = somar(45,89)
+
+console.log("Resultado: ", s);
