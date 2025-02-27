@@ -1,20 +1,20 @@
-let somar : (n1 : number, n2 : number) => number
+import React from "react";
+import { View, Text, Switch, Image  } from "react-native";
+import dogImg from "./assets/R.jpg"; 
 
-function calculo(numero1 : number, numero2 : number) : number {
-  return numero1 + numero2;
+const Principal = () => {
+  return (
+    <View style={{flex:1}}>
+      <Text>Ligar: </Text>
+      <Switch value={true}
+        thumbColor={"yellow"}
+        trackColor={{true: "purple", false: "cyan"}}
+      />
+      <Image style={{width: 300, height: 200}}
+      resizeMode="center"
+      source={dogImg}></Image>
+    </View>
+  )
 }
 
-// função anonima, quando não tem nome. Usamos para quando precisamos
-// passar uma função como parametro
-(numero1 : number, numero2 : number) : number => {
-  return numero1 + numero2
-}
-
-//e podemos colocar ela dentro de uma variavel
-somar = (numero1 : number, numero2 : number) : number => {
-  return numero1 + numero2
-}
-
-let s = somar(45,89)
-
-console.log("Resultado: ", s);
+export default Principal;
